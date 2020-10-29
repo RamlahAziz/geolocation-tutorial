@@ -84,8 +84,8 @@
 
             h1 {
                 color: white;
-                font-weight: 100;
-                font-size: 60px;
+                font-weight: 300;
+                font-size: 20px;
                 display: flex;
                 align-items: center;
             }
@@ -96,14 +96,17 @@
             /*Compass: https://thenounproject.com/search/?q=compass&i=592352*/
         </style>
         <script>
-            const arrow = document.querySelector('.arrow')
-            const speed = document.querySelector('.speed-value');
-            navigator.geolocation.watchPosition((data)=> {
-                speed.textContent = data.coords.speed;
-                arrow.style.transform = `rotate(${data.coords.heading}deg)`
-            }, error => {
-                alert("Allow Location Please!");
-            })
+            const arrow = document.querySelector(".arrow");
+            const speed = document.querySelector(".speed-value");
+            navigator.geolocation.watchPosition(
+                data => {
+                    speed.textContent = data.coords.speed;
+                    arrow.style.transform = `rotate(${data.coords.heading}deg)`;
+                },
+                error => {
+                    alert("Allow Location Please!");
+                }
+            );
         </script>
     </body>
 </html>
